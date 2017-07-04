@@ -12,10 +12,10 @@ var app = require('../web/app'),
     qproxy = require('../proxy'),
     setConfig = service.setConfig,
     qpconfig = service.getConfig(),
-    qport = qpconfig.qport || 999,
-    aport = qpconfig.aport || 1000,
-    httpsPort = qpconfig.httpsPort || 1001,
-    logServerPort = qpconfig.logServerPort || 3000,
+    qport = 1333,
+    aport = 1334,
+    httpsPort = 1335,
+    logServerPort = 1336,
     fekitConfigPath,
     fekitArgs,
     workPath;
@@ -37,17 +37,17 @@ function start(callback) {
     app.on('listening', function () {
         console.log('[JerryProxy] '.grey + 'Starting up proxy...');
         console.log('[JerryProxy] '.grey + 'Please set proxy server to 127.0.0.1:' + qport);
-        console.log('[JerryProxy] '.grey + 'Available on: ' + 'http://127.0.0.1:1000/jerry'.underline);
+        console.log('[JerryProxy] '.grey + 'Available on: ' + ('http://127.0.0.1:' + aport + '/jerry').underline);
         callback && callback();
         qproxy.server.listen(qport, httpsPort);
     });
 }
 
 function setRunningPort() {
-    qpconfig.qport = qport = process.argv[3] || 999;
-    qpconfig.aport = aport = process.argv[4] || 1000;
-    qpconfig.httpsPort = httpsPort = process.argv[5] || 1001;
-    qpconfig.logServerPort = logServerPort = process.argv[6] || 3000;
+    qpconfig.qport = qport = process.argv[3] || 1333;
+    qpconfig.aport = aport = process.argv[4] || 1334;
+    qpconfig.httpsPort = httpsPort = process.argv[5] || 1335;
+    qpconfig.logServerPort = logServerPort = process.argv[6] || 1336;
     setConfig(qpconfig);
 
     console.log('http代理端口被设置为:' + qport);

@@ -3,10 +3,10 @@
   "throttleLevel": null,
   "activated": "default",
   "nocache": false,
-  "qport": 999,
-  "aport": 1000,
-  "httpsPort": 1001,
-  "logServerPort": 3000,
+  "qport": 1333,
+  "aport": 1334,
+  "httpsPort": 1335,
+  "logServerPort": 1336,
   "group": {
     "default": [
       {
