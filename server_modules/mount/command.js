@@ -12,7 +12,7 @@ var app = require('../web/app'),
     qproxy = require('../proxy'),
     setConfig = service.setConfig,
     qpconfig = service.getConfig(),
-    qport = 1333,
+    qport = 999,
     aport = 1334,
     httpsPort = 1335,
     logServerPort = 1336,
@@ -44,7 +44,7 @@ function start(callback) {
 }
 
 function setRunningPort() {
-    qpconfig.qport = qport = process.argv[3] || 1333;
+    qpconfig.qport = qport = process.argv[3] || 999;
     qpconfig.aport = aport = process.argv[4] || 1334;
     qpconfig.httpsPort = httpsPort = process.argv[5] || 1335;
     qpconfig.logServerPort = logServerPort = process.argv[6] || 1336;

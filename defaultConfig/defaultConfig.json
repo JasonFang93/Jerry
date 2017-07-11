@@ -3,7 +3,7 @@
   "throttleLevel": null,
   "activated": "default",
   "nocache": false,
-  "qport": 1333,
+  "qport": 999,
   "aport": 1334,
   "httpsPort": 1335,
   "logServerPort": 1336,
